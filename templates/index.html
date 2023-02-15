@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div style="text-align: left; margin-bottom: 1rem" class="col">
+            <h4>Try our Model?. Please Upload a pet picture below</h4>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center; margin-bottom: 1rem" class="col-sm-1">
+        </div>
+        <div style="text-align: center; margin-bottom: 1rem" class="col-sm-4">
+            {{ dropzone.create('/') }}
+        </div>
+        <div class="col-sm-6">
+            <div style="text-align: center; margin-bottom: 1rem" class="row">
+                <label for="floatingTextarea">Predictions</label>
+                <textarea class="form-control" rows="4" cols="50" id="floatingTextarea" disabled>
+
+                    Species :- 
+                    Breed   :- 
+                
+            </textarea>
+            </div>
+            <div style="text-align: center; margin-bottom: 1rem" class="row">
+                <label for="floatingTextarea">Prediction time</label>
+                <textarea class="form-control" rows="3" cols="50" id="floatingTextarea" disabled>
+
+                    Time :-  
+                    
+                    
+            </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: center; margin-bottom: 1rem" class="col-sm-2">
+        </div>
+        <div style="text-align: left; margin-bottom: 1rem" class="col-sm-4">
+            <button type="button" id="upload" class="btn btn-outline-dark">Upload</button>
+        </div>
+    </div>
+    <div class="row">
+        <div style="text-align: left; margin-bottom: 1rem" class="col">
+            <ul>
+                <li>Chekout the full project Details in <a href="https://github.com/vasanthsai26/oxford_pet_object_localization_and_classification">Github</a></li>
+            </ul>    
+        </div>
+    </div>
+</div>
+{{ dropzone.load_js() }}
+{{ dropzone.config() }}
+{% endblock content %}

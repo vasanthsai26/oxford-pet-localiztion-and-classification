@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static',filename='styles.css')}}">
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    {{ dropzone.load_css() }}
+    {{ dropzone.style(
+    'border: 2px dashed #000000;
+    margin: 10px 0 10px;
+    text-align: center;
+    min-height: 300px;
+    max-width: 300px;')}}
+
+    <!-- Title -->
+    {% if title%}
+    <title>Pet Localization : {{title}}</title>
+    {% else %}
+    <title>Pet Localization </title>
+    {% endif %}
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='images/favicon-paw.png')}}">
+</head>
+
+<body>
+    <header class="bg-dark text-center text-white">
+        <div class="container">
+            <div class="row">
+                <div style="text-align: center; margin-bottom: 1rem" class="col">
+                    <h1></h1>
+                    <h1> 🐕 Pet Localization and Classification 🐈 </h1>
+                </div>
+            </div>
+            <div class="row">
+                <div style="text-align: center; margin-bottom: 1rem" class="col">
+                    <p>The LocNet Model will detect the face of the pet and classigy it's Breed and Species</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="row">
+            <div style="text-align: left; margin-bottom: 1rem" class="col">
+                <h4><br>About The Model</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div style="text-align: justify; text-justify: inter-word; margin-bottom: 1rem; font-size: 1.2em;"
+                class="col-8">
+                <ul>
+                    <li>The LocNet Model has ResNet 50 backbone with a custom bounding box head and classification head.
+                        This object localization model has trained on Oxford Pets dataset.</li>
+                    <li>The Oxford Pets dataset (also known as the "dogs vs cats" dataset) is a collection of images and
+                        annotations labeling various breeds of dogs and cats.</li>
+                    <li>There are approximately 100 examples of each of the 37 breeds. This dataset contains the object
+                        detection portion of the original dataset with bounding boxes around the animals' heads.</li>
+                    <li>Here are the different <a href="{{url_for('class_details')}}" class="breeds info"><span
+                                class="breeds ">Breeds(classes)</span></a> that the model will predict and localize.
+                    </li>
+                </ul>
+            </div>
+            <div style="text-align: center; margin-bottom: 1rem" class="col">
+                <img src="{{ url_for('static',filename='images/example.jpg')}}" alt="object_localzation_segmentation"
+                    width="300" height="300">
+            </div>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Google -->
+                <a class="btn btn-outline-light btn-floating m-1"
+                    href="href=”https://mail.google.com/mail/?view=cm&source=mailto&to=vasanthsai26@gmail.com&body=From%20obcloc%page&su=Hi”"
+                    role="button"><i class="fab fa-google"></i></a>
+                <!-- Linkedin -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://www.linkedin.com/in/vasanthsai/"
+                    role="button"><i class="fab fa-linkedin-in"></i></a>
+
+                <!-- Github -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/vasanthsai26"
+                    role="button"><i class="fab fa-github"></i></a>
+                
+                <!-- Medium -->
+                <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/vasanthsai26"
+                    role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div">
+          <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

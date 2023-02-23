@@ -18,10 +18,15 @@ kiwisolver==1.4.4
 MarkupSafe==2.1.2
 matplotlib==3.6.3
 networkx==3.0
+numpy==1.24.2
+opencv-python-headless==4.7.0.68
+packaging==23.0
+pandas==1.5.3
+pathlib==1.0.1
+Pillow==9.4.0
+pyparsing==3.0.9
 threadpoolctl==3.1.0
 tifffile==2023.2.3
-torch==1.13.1
-torchvision==0.14.1
 typing_extensions==4.4.0
 urllib3==1.26.14
 Werkzeug==2.2.2
